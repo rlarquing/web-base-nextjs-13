@@ -1,3 +1,4 @@
+'use client';
 import List from "@mui/material/List";
 import ListSubheader from "@mui/material/ListSubheader";
 import Link from "next/link";
@@ -21,12 +22,12 @@ export function Menu() {
         <ListSubheader component='div' inset>
             Trabajo con Entity
         </ListSubheader>
-        <Link href='/nueva-entity'>
+        <Link href='/about'>
             <ListItemButton>
                 <ListItemIcon>
                     <DashboardIcon />
                 </ListItemIcon>
-                <ListItemText primary='Nueva entity' />
+                <ListItemText primary='about' />
             </ListItemButton>
         </Link>
         <Link href='/agregar-atributos-entity'>
