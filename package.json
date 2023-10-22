@@ -2,21 +2,67 @@
   "name": "web-base-nextjs",
   "version": "0.1.0",
   "private": true,
+  "description": "Web base para proyectos con nextjs",
+  "author": "Reynelbis Larquin Guerra",
   "scripts": {
-    "dev": "next dev",
+    "dev": "dotenv next dev --port %PORT%",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "cross-env APP_ENV=production next build && dotenv next start --port %PORT%",
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "@types/node": "20.4.5",
-    "@types/react": "18.2.16",
-    "@types/react-dom": "18.2.7",
-    "eslint": "8.45.0",
-    "eslint-config-next": "13.4.12",
-    "next": "13.4.12",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.8",
+    "@mui/icons-material": "^5.14.14",
+    "@mui/material": "^5.14.14",
+    "@mui/x-data-grid": "^6.16.2",
+    "@reduxjs/toolkit": "^1.9.7",
+    "apexcharts": "^3.44.0",
+    "axios": "^1.5.1",
+    "context": "^3.0.13",
+    "cookie": "^0.5.0",
+    "cookies-next": "^4.0.0",
+    "dexie": "^3.2.4",
+    "dexie-react-hooks": "^1.1.6",
+    "next": "13.5.5",
+    "notistack": "^3.0.1",
+    "nprogress": "^0.2.0",
+    "path": "^0.12.7",
     "react": "18.2.0",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "sweetalert2": "^11.7.32",
+    "sweetalert2-react-content": "^5.0.7"
+  },
+  "devDependencies": {
+    "@types/cookie": "^0.5.2",
+    "@types/node": "20.8.6",
+    "@types/nprogress": "^0.2.1",
+    "@types/react": "18.2.28",
+    "@types/react-dom": "18.2.13",
+    "airbnb": "^0.0.2",
+    "cross-env": "^7.0.3",
+    "cross-var": "^1.1.0",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.3.0",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "13.5.5",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "5.2.2"
+  },
+  "lint-staged": {
+    "(ts|tsx)": [
+      "eslint . --fix",
+      "prettier --write"
+    ]
   }
 }
